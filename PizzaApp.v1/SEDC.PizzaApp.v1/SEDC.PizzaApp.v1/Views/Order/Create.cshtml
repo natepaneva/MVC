@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+@model OrderViewModel
+
+<h1 class="text-center">Order a pizza</h1>
+<h4 style="color: red">@ViewBag.Error</h4>
+<br /><br /><br />
+
+<form asp-controller="Order" asp-action="Create" method="post">
+
+    <div class="row text-center">
+        <div class="col-lg-6">
+            <input class="input-lg input" asp-for="FirstName" placeholder="First name" />
+        </div>
+        <div class="col-lg-6">
+            <input class="input-lg input" asp-for="LastName" placeholder="Last name" />
+        </div>
+    </div>
+    <br />
+    <div class="row text-center">
+        <div class="col-lg-6">
+            <input class="input-lg input" asp-for="Address" placeholder="Address" />
+        </div>
+        <div class="col-lg-6">
+            <input class="input-lg input" asp-for="Phone" placeholder="Phone" />
+        </div>
+    </div>
+    <br />
+    <div class="row text-center">
+        <div class="col-lg-6">
+            <input class="input-lg input" asp-for="PizzaName" placeholder="Pizza name" />
+        </div>
+        <div class="col-lg-6">
+            <select class="input-select input" asp-for="Size" asp-items="Html.GetEnumSelectList<PizzaSize>()">
+                <option value="value" selected>Select size</option>
+            </select>
+        </div>
+    </div>
+    <br />
+
+   
+    <br />
+    <br />
+
+    <div class="text-center"><input type="submit" value="Order pizza" class="btn btn-submit btn-success" /></div>
+    
+</form>
+
+@*@using (Html.BeginForm("Create", "Order", FormMethod.Post))
+    {
+        <h3>User info:</h3>
+        @Html.LabelFor(x => x.FirstName)
+        @Html.TextBoxFor(x => x.FirstName)
+
+        @Html.LabelFor(x => x.LastName)
+        @Html.TextBoxFor(x => x.LastName)
+
+        @Html.LabelFor(x => x.Address)
+        @Html.TextBoxFor(x => x.Address)
+
+
+        @Html.LabelFor(x => x.Phone)
+        @Html.TextBoxFor(x => x.Phone)
+
+
+        @Html.LabelFor(x => x.PizzaName)
+        @Html.TextBoxFor(x => x.PizzaName)
+
+
+        @Html.LabelFor(x => x.Size)
+        @Html.DropDownListFor(x => x.Size, Html.GetEnumSelectList(Model.Size.GetType()))
+
+        <input type="submit" value="Order pizza"/>
+    }*@
+

@@ -1,0 +1,35 @@
+﻿@model List<Order>
+        @*<h3>Order no. @Model.Id</h3>*@
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="text-center">#</th>
+                <th class="text-center">User info</th>
+                <th class="text-center">Pizza name</th>
+                <th class="text-center">Pizza Size</th>
+                <th class="text-center">Total price</th>
+                <th class="text-center">Photo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model)
+            {
+                <tr>
+                    <td class="text-center">@Html.ActionLink("Order no. " + order.Id, "Details", "Order", new { id = order.Id })</td>
+                    <td class="text-center">@order.User.FirstName @order.User.LastName</td>
+                    <td class="text-center">@order.Pizza.Name</td>
+                    <td class="text-center">@order.Pizza.Size</td>
+                    <td class="text-center">@order.Price</td>
+                    <td class="text-center">
+                        <img src="https://www.cicis.com/wp-content/uploads/2019/04/pizza_categoryheader.png" alt="Pizza" height="50" />
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+
+
+

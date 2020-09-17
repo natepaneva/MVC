@@ -1,0 +1,23 @@
+﻿
+
+@model OrderListViewModel
+<br />
+   
+
+<h1 class="text-center">@ViewBag.Title</h1>
+
+<h2 class="text-center">List of all orders</h2>
+
+<br />
+<br />
+
+<ul>
+
+    @*@Html.Partial("~/Views/Shared/_OrderItem.cshtml", List<Order>)*@
+
+    <partial name="_OrderItem" for="Orders" />
+
+</ul>
+<br />
+<br />
+

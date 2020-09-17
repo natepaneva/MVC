@@ -1,0 +1,34 @@
+﻿<br />
+
+
+@{
+    ViewData["Title"] = "Details";
+}
+<br />
+<br />
+<br />
+
+<h3 class="text-center">Details</h3>
+
+@model OrderDetailsModel
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="text-center">Order name</th>
+            <th class="text-center">Order phone</th>
+            <th class="text-center">Pizza name</th>
+            <th class="text-center">Pizza size</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-center"> @Html.DisplayFor(x => x.OrderName)</td>
+            <td class="text-center"> @Html.DisplayFor(x => x.OrderPhone)</td>
+            <td class="text-center"> @Html.DisplayFor(x => x.PizzaName)</td>
+            <td class="text-center">@Html.DisplayFor(x => x.Price)</td>
+        </tr>
+    </tbody>
+</table>
+
